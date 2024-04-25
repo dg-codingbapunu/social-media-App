@@ -1,6 +1,6 @@
-const Post = () => {
+const Posts = () => {
   return (
-    <div class="card" style={{ width: "18rem" }}>
+    <div class="card" style={{ width: "18rem;" }}>
       <div class="card-body">
         <h5 class="card-title">Card title</h5>
         <p class="card-text">
@@ -14,4 +14,4 @@ const Post = () => {
     </div>
   );
 };
-export default Post;
+export default Posts;
