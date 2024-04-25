@@ -8,13 +8,13 @@ import PostList from "./components/PostList";
 import { useState } from "react";
 
 function App() {
-  const [selectedTab, setSelectedTab] = useState("Hpme");
+  const [selectedTab, setSelectedTab] = useState("Home");
   return (
     <div className="app-container">
       <Sidebar selectedTab={selectedTab}></Sidebar>
       <div className="content">
         <Header></Header>
-        {selectedTab === "Home" ? (
+        {selectedTab === " Home" ? (
           <PostList></PostList>
         ) : (
           <CreatePost></CreatePost>

@@ -30,14 +30,14 @@ const Sidebar = ({ selectedTab }) => {
         <li>
           <a
             href="#"
-            class={`nav-link text-white${
+            class={`nav-link text-white ${
               selectedTab === "Create Post" && "active"
-            }`}
+            } `}
           >
             <svg class="bi pe-none me-2" width="16" height="16">
               <use xlinkHref="#speedometer2"></use>
             </svg>
-            Create post
+            Create Post
           </a>
         </li>
       </ul>
