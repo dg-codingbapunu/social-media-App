@@ -8,14 +8,18 @@ import PostList from "./components/PostList";
 import { useState } from "react";
 
 function App() {
-  const [selectedTab, setSelectedTab] = useState("Home");
+  const [selectedTab, setSelectedTab] = useState("Hpme");
   return (
     <div className="app-container">
       <Sidebar></Sidebar>
       <div className="content">
         <Header></Header>
-        <CreatePost></CreatePost>
-        <PostList></PostList>
+        {selectedTab === "Home" ? (
+          <PostList></PostList>
+        ) : (
+          <CreatePost></CreatePost>
+        )}
+
         <Footer></Footer>
       </div>
     </div>
