@@ -11,7 +11,7 @@ function App() {
   const [selectedTab, setSelectedTab] = useState("Hpme");
   return (
     <div className="app-container">
-      <Sidebar></Sidebar>
+      <Sidebar selectedTab={selectedTab}></Sidebar>
       <div className="content">
         <Header></Header>
         {selectedTab === "Home" ? (
