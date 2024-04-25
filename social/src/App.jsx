@@ -1,6 +1,7 @@
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Header from "./components/Header";
+import CreatePost from "./components/Createpost";
 import Footer from "./components/Footer";
 import Sidebar from "./components/Sidebar";
 function App() {
@@ -9,6 +10,7 @@ function App() {
       <Sidebar></Sidebar>
       <div className="content">
         <Header></Header>
+        <CreatePost></CreatePost>
         <Footer></Footer>
       </div>
     </div>
