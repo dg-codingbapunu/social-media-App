@@ -16,7 +16,11 @@ const Sidebar = ({ selectedTab }) => {
       <hr />
       <ul class="nav nav-pills flex-column mb-auto">
         <li class="nav-item">
-          <a href="#" class="nav-link text-white " aria-current="page">
+          <a
+            href="#"
+            class={`nav-link text-white ${selectedTab === "Home" && "active"} `}
+            aria-current="page"
+          >
             <svg class="bi pe-none me-2" width="16" height="16">
               <use xlinkHref="#home"></use>
             </svg>
@@ -24,7 +28,12 @@ const Sidebar = ({ selectedTab }) => {
           </a>
         </li>
         <li>
-          <a href="#" class="nav-link text-white">
+          <a
+            href="#"
+            class={`nav-link text-white${
+              selectedTab === "Create Post" && "active"
+            }`}
+          >
             <svg class="bi pe-none me-2" width="16" height="16">
               <use xlinkHref="#speedometer2"></use>
             </svg>
