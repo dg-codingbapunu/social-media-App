@@ -5,7 +5,6 @@ const PostList = () => {
       <Posts></Posts>
       <Posts></Posts>
       <Posts></Posts>
-      <Posts></Posts>
     </>
   );
 };
