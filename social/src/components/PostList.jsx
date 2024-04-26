@@ -1,4 +1,5 @@
 import Posts from "./Posts";
+import React from "react";
 const PostList = () => {
   return (
     <>
