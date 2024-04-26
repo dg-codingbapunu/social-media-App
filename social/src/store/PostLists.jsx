@@ -19,4 +19,5 @@ const PostListsProvider = ({ children }) => {
     </PostLists.Provider>
   );
 };
+
 export default PostListsProvider;
