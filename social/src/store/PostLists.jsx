@@ -53,6 +53,7 @@ const PostListsProvider = ({ children }) => {
 
   // Function to delete a post
   const deletePost = (postId) => {
+    console.log(`delete post no ${postId}`);
     dispatchPostLists({ type: "DELETE_POST", payload: postId });
   };
 
