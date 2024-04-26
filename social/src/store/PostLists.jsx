@@ -9,7 +9,10 @@ const postListReducer = (currentPostList, action) => {
 };
 
 const PostListsProvider = ({ children }) => {
-  const [postLists, dispatchPostLists] = useReducer(postListReducer, []);
+  const [postLists, dispatchPostLists] = useReducer(
+    postListReducer,
+    DEFAULT_POST_LIST
+  );
   const addPost = () => {};
   const deletePost = () => {};
 
