@@ -24,17 +24,17 @@ const DEFAULT_POST_LIST = [
     id: "1",
     title: "Going to Hyderabad",
     body: "Hi Friends, I am going to Hyderabad for my vacation.",
-    reactions: "1000",
+    reactions: " 👍 56",
     userId: "user_90",
-    tags: ["vacations", "Hyderabad", "Enjoy"],
+    tags: ["#vacations", "#Hyderabad", "#Enjoy"],
   },
   {
     id: "2",
     title: "Pass ho bhai",
     body: "2 saal ke masti ke baad bhi MCA pass ho gaya.",
-    reactions: "1000",
+    reactions: " 👍 107",
     userId: "user_2",
-    tags: ["MCA", "pass", "enjoy"],
+    tags: ["#MCA", "#pass", "#enjoy"],
   },
 ];
 
