@@ -1,12 +1,17 @@
+import React, { useContext } from "react";
+import { PostLists } from "../store/PostLists";
 import Posts from "./Posts";
-import React from "react";
+
 const PostList = () => {
+  const { postLists } = useContext(PostLists);
+
   return (
     <>
-      <Posts></Posts>
-      <Posts></Posts>
-      <Posts></Posts>
+      {postLists.map((posts) => (
+        <Posts key={posts.id} posts={posts} />
+      ))}
     </>
   );
 };
+
 export default PostList;

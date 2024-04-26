@@ -1,44 +1,66 @@
-import { createContext, useReducer } from "react";
+import React, { createContext, useReducer } from "react";
+
+// Create the context
 export const PostLists = createContext({
   postLists: [],
   addPost: () => {},
   deletePost: () => {},
 });
+// Reducer function for managing post lists
 const postListReducer = (currentPostList, action) => {
-  return currentPostList;
+  switch (action.type) {
+    case "ADD_POST":
+      return [...currentPostList, action.payload];
+    case "DELETE_POST":
+      return currentPostList.filter((post) => post.id !== action.payload);
+    default:
+      return currentPostList;
+  }
 };
 
-const PostListsProvider = ({ children }) => {
-  const [postLists, dispatchPostLists] = useReducer(
-    postListReducer,
-    DEFAULT_POST_LIST
-  );
-  const addPost = () => {};
-  const deletePost = () => {};
-
-  return (
-    <PostLists.Provider value={(postLists, deletePost, addPost)}>
-      {children}
-    </PostLists.Provider>
-  );
-};
+// Default post list data
 const DEFAULT_POST_LIST = [
   {
     id: "1",
     title: "Going to Hyderabad",
-    body: "Hi Freinds, iam going to Hyderabad for my vacation,",
+    body: "Hi Friends, I am going to Hyderabad for my vacation.",
     reactions: "1000",
     userId: "user_90",
     tags: ["vacations", "Hyderabad", "Enjoy"],
   },
   {
     id: "2",
-    title: "pass ho bhai",
-    body: "2 sal ke masti ke baad bhi mca pass ho gaya",
+    title: "Pass ho bhai",
+    body: "2 saal ke masti ke baad bhi MCA pass ho gaya.",
     reactions: "1000",
     userId: "user_2",
-    tags: ["mca", "pass", "enjoy"],
+    tags: ["MCA", "pass", "enjoy"],
   },
 ];
+
+// Context provider component
+const PostListsProvider = ({ children }) => {
+  // Initialize state using useReducer
+  const [postLists, dispatchPostLists] = useReducer(
+    postListReducer,
+    DEFAULT_POST_LIST
+  );
+
+  // Function to add a new post
+  const addPost = (newPost) => {
+    dispatchPostLists({ type: "ADD_POST", payload: newPost });
+  };
+
+  // Function to delete a post
+  const deletePost = (postId) => {
+    dispatchPostLists({ type: "DELETE_POST", payload: postId });
+  };
+
+  return (
+    <PostLists.Provider value={{ postLists, addPost, deletePost }}>
+      {children}
+    </PostLists.Provider>
+  );
+};
 
 export default PostListsProvider;
