@@ -9,7 +9,9 @@
 }
 .post-card {
   margin: 20px 50px;
+  min-width: 25rem;
 }
 .hasthag {
   margin: 0px 4px;
+  cursor: pointer;
 }
